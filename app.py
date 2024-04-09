@@ -1,11 +1,19 @@
 from flask import Flask, jsonify, render_template, request
 from dbfunc import load_hotels_from_db, load_user_from_db, load_room_from_db
+#connection to DB
+
 
 
 app = Flask(__name__)
 
 
 
+@app.route('/testlogin')
+def testlogin():
+    return render_template('testlogin.html')
+@app.route('/testregister')
+def testregister():
+    return render_template('testereg.html')
 
 @app.route('/')
 def home():
