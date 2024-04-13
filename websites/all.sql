@@ -80,3 +80,7 @@ INSERT INTO `city_db` VALUES (1,'Aberdeen'),(2,'Belfast'),(3,'Birmingham'),(4,'B
 SELECT * FROM room_db;
 
 USE world_hotels;
+
+SELECT * FROM user_db;
+
+ALTER TABLE user_db MODIFY password VARCHAR(255);
