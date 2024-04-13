@@ -9,28 +9,36 @@
     </div>
 
     <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-8 xl:space-x-16" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
-
+        {% if user.is_authenticated %}
         <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
-            <a href="#">Landing</a>
+            <a href="/home">Home Page</a>
+        </li>
+        
+        <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+            <a href="/logout">Logout</a>
+        </li>
+        {% else %}
+        <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+            <a href="/">Home Page</a>
+        </li>
+        <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+            <a href="/about">About</a>
         </li>
 
         <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
-            <a href="#">Pages</a>
+            <a href="/contact">Contact</a>
         </li>
 
         <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
-            <a href="#">Contact</a>
+            <a href="/login">Login</a>
         </li>
-
-        <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
-            <a href="#">About</a>
-        </li>
-
+        
+        
     </ul>
 
-    <a class="px-5 py-3 lg:block border-2 border-red-700 rounded-lg font-semibold text-red-700 text-lg hover:bg-red-700 hover:text-white transition ease-linear duration-500" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+    <a href="/login" class="px-5 py-3 lg:block border-2 border-red-700 rounded-lg font-semibold text-red-700 text-lg hover:bg-red-700 hover:text-white transition ease-linear duration-500" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
         Book a room
     </a> <br>
     </br>
-    
+    {% endif %}
 </nav>
