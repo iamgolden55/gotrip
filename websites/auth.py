@@ -67,17 +67,22 @@ def sign_up():
             return render_template("sign-up.html")
         else:
             # Check if a user with the given username already exists
-            user = User.query.filter_by(username=username).first()
-            if user:
+            user_by_username = User.query.filter_by(username=username).first()
+            user_by_email = User.query.filter_by(email=email).first()
+            if user_by_username:
                 flash('Username already exists.', category='error')
+                return render_template("sign-up.html")
+            elif user_by_email:
+                flash('Email already exists.', category='error')
                 return render_template("sign-up.html")
             else:
                 new_user = User(username=username, email=email, password=generate_password_hash(password1, method='scrypt'), full_name=firstName, city=city, date_of_birth=Dob)
                 db.session.add(new_user)
                 db.session.commit()
-                login_user(user, remember=True)
+                login_user(new_user, remember=True)
+
                 flash("Account created", category='success')
-                return redirect(url_for('views.home'))
+                return redirect(url_for('views.profile'))
                 # Here you should also add the code to actually create the account
                 # Then you might want to redirect the user to the login page or the account page
                 # return redirect(url_for('login'))
