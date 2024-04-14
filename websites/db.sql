@@ -31,6 +31,10 @@ UPDATE hotels SET hotel_image = 'https://images.unsplash.com/photo-1551918120-97
 UPDATE hotels SET city_id = 1 WHERE id = 1;
 UPDATE hotels SET city_id = 4 WHERE id = 9;
 UPDATE hotels SET city_id = 8 WHERE id = 2;
+
+UPDATE hotels 
+SET name = 'new_hotel_name' 
+WHERE id = 1;
 -- and so on for each hotel
 
 SELECT * FROM cities;
