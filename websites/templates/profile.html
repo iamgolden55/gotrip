@@ -13,7 +13,7 @@
     {% for hotel, city in hotels_with_cities %}
     <article
     class="grid grid-cols-2 gap-4 mt-16">
-    <img class="w-full max-h-[400px] object-cover md:w-52" src="{{hotel.hotel_image}}" alt="">
+    <a href="/bookings/{{hotel.id}}" ><img class="w-full max-h-[400px] object-cover md:w-52" src="{{hotel.hotel_image}}" alt=""></a>
     <div class="">
         <div class="p-5 pb-10">
             <h1 class="text-2xl font-semibold text-gray-800 mt-4">
