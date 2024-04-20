@@ -14,9 +14,27 @@ INSERT INTO `hotels` (`id`, `hotel_name`, `hotel_location`, `hotel_price`, `hote
 (9, 'Hotel 9', 'Location 9', 'Price 9', 'Rating 9', 'https://images.unsplash.com/photo-1712928247899-2932f4c7dea3?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
 (10, 'Hotel 10', 'Location 10', 'Price 10', 'Rating 10', 'https://images.unsplash.com/photo-1712928247899-2932f4c7dea3?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 
-SELECT * FROM `hotels`;
+INSERT INTO `rooms` (`room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('1', '6', 'Single', '250', '1', '3');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('2', '21', 'Single', '300', '1', '2');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('3', '45', 'Double', '130', '1', '2');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('4', '32', 'Double', '210', '1', '1');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('5', '20', 'Single', '500', '1', '6');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('6', '11', 'Single', '320', '1', '7');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('7', '8', 'Double', '281', '1', '8');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('8', '10', 'Double', '450', '0', '4');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('9', '15', 'Single', '510', '1', '5');
+INSERT INTO `rooms` (`id`, `room_number`, `room_type`, `price`, `is_available`, `hotel_id`) VALUES ('10', '5', 'Double', '421', '1', '3');
 
-SELECT * FROM users;
+USE gotripv2;
+
+ALTER TABLE bookings ADD COLUMN check_in_date DATETIME;
+ALTER TABLE bookings ADD COLUMN check_out_date DATETIME;
+SELECT * FROM `bookings`;
+
+
+SELECT * FROM rooms;
+
+
 
 SELECT id FROM cities;
 

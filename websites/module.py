@@ -35,6 +35,10 @@ class Booking(db.Model):
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     room_id = db.Column(db.Integer, db.ForeignKey('rooms.id'))
+    check_in_date = db.Column(db.DateTime(timezone=True))  # New field
+    check_out_date = db.Column(db.DateTime(timezone=True))  # New field
+    
+    
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
