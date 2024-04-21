@@ -31,6 +31,10 @@ ALTER TABLE bookings ADD COLUMN check_in_date DATETIME;
 ALTER TABLE bookings ADD COLUMN check_out_date DATETIME;
 SELECT * FROM `bookings`;
 
+SELECT * FROM `rooms`;
+
+
+
 
 SELECT * FROM rooms;
 
